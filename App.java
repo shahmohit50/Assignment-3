@@ -53,6 +53,11 @@ public class App {
         if (list.head == null) {
             list.head = node;
         }else{
+            if(index == 0){
+                node.next = list.head;
+                list.head = node;
+                return list;
+            }
             Node last = list.head;
             int count = 0;
             while (last.next != null  && count< index-1) {
@@ -120,7 +125,7 @@ public class App {
         Linsert(l1, 232);
         printList(l1);
         System.out.println( " ");
-        LinsertAt(l1, 12, 2);
+        LinsertAt(l1, 12, 0);
         printList(l1);
         System.out.println( " ");
         printListIndex(l1, 2);        
